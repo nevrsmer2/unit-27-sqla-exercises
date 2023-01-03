@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %} Show Details {% endblock %}
+
+{% block body %}
+
+<body>
+
+    <!-- Display a user's details -->
+
+    <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+
+    <div>
+        {% if user.image_url %}
+        <img class="user-img" src="{{ user.image_url }}" alt="{{ user.first_name }} {{ user.last_name }}">
+        {% endif %}
+    </div>
+
+    <div>
+        <form>
+            <button formaction="/users/{{ user.id }}/edit" formmethod="GET">Edit</button>
+            <button formaction="/users/{{ user.id }}/delete" formmethod="POST">Delete</button>
+        </form>
+    </div>
+
+    <!-- Display a user's posts on user's details page -->
+
+    <h1>Posts</h1>
+
+    <ul>
+        {% for post in posts %}
+        <li>
+            <!-- <a href="/users/{{ user.id }}">{{ post.title }}</a> -->
+            <a href="/posts/{{ post.id }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+    <div>
+        <form>
+            <button formaction="/posts/{{ user.id }}/new" formmethod="GET">Add Post</button>
+        </form>
+    </div>
+
+
+</body>
+
+{% endblock %}
