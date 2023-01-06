@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/styles.css">
+
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+<form>
+    <button formaction="/" formmethod="GET">Blogly</button>
+    <button formaction="/users" formmethod="GET">Users</button>
+    <button formaction="/users/add" formmethod="GET">Add User</button>
+    <button formaction="/tags" formmethod="GET">Tags</button>
+    <button formaction="/tags/new" formmethod="GET">Add Tag</button>
+</form>
+
+<body>
+    {% block body %} {% endblock %}
+</body>

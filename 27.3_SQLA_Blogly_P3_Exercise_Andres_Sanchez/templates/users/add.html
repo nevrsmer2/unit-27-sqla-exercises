@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Add User {% endblock %}
+
+{% block body %}
+
+<h1>Create New User</h1>
+<p>Enter your details below and click Create User to create your profile.</p>
+
+<form method="POST">
+
+    <div>
+        <label for="first_name">First Name: </label>
+        <input id="first_name" type="text" name="first_name" required>
+    </div>
+
+    <div>
+        <label for="last_name">Last Name: </label>
+        <input id="last_name" type="text" name="last_name" required>
+    </div>
+
+    <div>
+        <label for="image_url">Image URL: </label>
+        <input id="image_url" type="text" name="image_url">
+    </div>
+
+    <div>
+        <button type="submit">Create User</button>
+    </div>
+
+</form>
+
+{% endblock %}
